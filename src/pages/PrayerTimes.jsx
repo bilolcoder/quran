@@ -142,8 +142,8 @@ const PrayerTimes = () => {
         {activePrayer && (
           <div className="p-6 bg-gradient-to-br from-primary-600 to-emerald-700 rounded-3xl text-white shadow-2xl shadow-primary-600/20">
             <p className="text-primary-100 text-sm font-bold uppercase tracking-widest mb-2">Hozirgi vaqt</p>
-            <h2 className="text-3xl font-black mb-1">{prayerNamesUz[activePrayer]} vaqti</h2>
-            <div className="text-5xl font-mono font-black mt-4">
+            <h2 className="text-2xl md:text-3xl font-black mb-1">{prayerNamesUz[activePrayer]} vaqti</h2>
+            <div className="text-4xl md:text-5xl font-mono font-black mt-4">
               -{countdown}
             </div>
             <p className="text-primary-100 text-xs mt-2 italic">Navbatdagi namozgacha qolgan vaqt</p>

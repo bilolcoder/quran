@@ -1,28 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Book, Search, Moon, Sun } from 'lucide-react';
+import { Moon, Search, Sun, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
-  return (
-    <nav className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="p-2 bg-primary-600 rounded-lg group-hover:bg-primary-500 transition-colors">
-            <Book className="text-white w-6 h-6" />
-          </div>
-          <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-700 to-emerald-500">
-            Quran Kareem
-          </span>
-        </Link>
+  const [isOpen, setIsOpen] = React.useState(false);
 
-        <div className="hidden md:flex items-center gap-6">
-          <Link to="/" className="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
-            Suralar
+  return (
+    <nav className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex justify-between items-center">
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform">
+              <span className="text-white font-bold text-xl">Q</span>
+            </div>
+            <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-emerald-600 bg-clip-text text-transparent">
+              Quran App
+            </span>
           </Link>
-          <Link to="/prayer-times" className="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
-            Namoz Vaqtlari
-          </Link>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-6">
+            <Link to="/" className="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+              Suralar
+            </Link>
+            <Link to="/prayer-times" className="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+              Namoz Vaqtlari
+            </Link>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="md:hidden p-2 text-slate-600 dark:text-slate-300"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
+
+        {/* Mobile Menu Drawer */}
+        {isOpen && (
+          <div className="md:hidden pt-4 pb-2 space-y-2 animate-in slide-in-from-top-4">
+            <Link 
+              to="/" 
+              className="block px-4 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+              onClick={() => setIsOpen(false)}
+            >
+              Suralar
+            </Link>
+            <Link 
+              to="/prayer-times" 
+              className="block px-4 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+              onClick={() => setIsOpen(false)}
+            >
+              Namoz Vaqtlari
+            </Link>
+          </div>
+        )}
       </div>
     </nav>
   );

@@ -130,9 +130,9 @@ const SurahDetail = () => {
 
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <div className="flex items-center justify-between mb-8">
-        <div className="flex items-center gap-4">
-          <Link to="/" className="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors text-white">
+      <div className="mb-8">
+        <div className="flex items-center gap-4 mb-4">
+          <Link to="/" className="p-2 hover:bg-slate-200 shadow shadow-slate-200 dark:hover:bg-slate-800 rounded-2xl transition-colors text-white">
             <ChevronLeft className="w-6 h-6" />
           </Link>
           <div>
@@ -146,7 +146,7 @@ const SurahDetail = () => {
 
         <button 
           onClick={toggleListening}
-          className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-all ${
+          className={`flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold transition-all ${
             isListening 
             ? 'bg-red-500 text-white animate-pulse' 
             : 'bg-primary-600 text-white hover:bg-primary-500 shadow-lg shadow-primary-600/20'
@@ -188,15 +188,15 @@ const SurahDetail = () => {
         </div>
       )}
 
-      <div className="bg-white dark:bg-slate-800 p-8 md:p-12 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700">
+      <div className="bg-white dark:bg-slate-800 p-5 md:p-12 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700">
         <div className="space-y-12">
           {/* Continuous Arabic Text */}
           <div className="text-right dir-rtl" dir="rtl">
-            <p className="font-arabic text-4xl md:text-5xl leading-[2.5] md:leading-[3] text-slate-900 dark:text-slate-100 select-none notranslate inline-block">
+            <p className="font-arabic text-3xl md:text-5xl leading-[2.8] md:leading-[3] text-slate-900 dark:text-slate-100 select-none notranslate inline-block">
               {verses.map((verse, index) => (
                 <span key={verse.id} className="inline group relative cursor-pointer hover:text-primary-600 transition-colors">
                   {verse.text_uthmani}
-                  <span className="inline-flex items-center justify-center w-10 h-10 mx-2 text-sm font-bold border-2 border-primary-200 dark:border-primary-800 rounded-full text-primary-600 dark:text-primary-400 align-middle notranslate" dir="ltr">
+                  <span className="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 mx-1 md:mx-2 text-xs md:text-sm font-bold border-2 border-primary-200 dark:border-primary-800 rounded-full text-primary-600 dark:text-primary-400 align-middle notranslate" dir="ltr">
                     {verse.verse_number}
                   </span>
                 </span>
