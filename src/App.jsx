@@ -8,7 +8,7 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+      <div className="min-h-screen bg-slate-900 text-slate-100">
         <Navbar />
         <main className="container mx-auto px-4 py-8">
           <Routes>

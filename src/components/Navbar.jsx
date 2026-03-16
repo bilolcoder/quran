@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Moon, Search, Sun, Menu, X } from 'lucide-react';
+import { Search, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800">
+    <nav className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 group">
@@ -20,17 +20,17 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+            <Link to="/" className="text-slate-300 hover:text-primary-400 font-medium transition-colors">
               Suralar
             </Link>
-            <Link to="/prayer-times" className="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+            <Link to="/prayer-times" className="text-slate-300 hover:text-primary-400 font-medium transition-colors">
               Namoz Vaqtlari
             </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden p-2 text-slate-600 dark:text-slate-300"
+            className="md:hidden p-2 text-slate-300"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -42,14 +42,14 @@ const Navbar = () => {
           <div className="md:hidden pt-4 pb-2 space-y-2 animate-in slide-in-from-top-4">
             <Link 
               to="/" 
-              className="block px-4 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+              className="block px-4 py-2 text-slate-300 hover:bg-slate-800 rounded-lg"
               onClick={() => setIsOpen(false)}
             >
               Suralar
             </Link>
             <Link 
               to="/prayer-times" 
-              className="block px-4 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+              className="block px-4 py-2 text-slate-300 hover:bg-slate-800 rounded-lg"
               onClick={() => setIsOpen(false)}
             >
               Namoz Vaqtlari

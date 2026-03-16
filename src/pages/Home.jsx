@@ -38,10 +38,10 @@ const Home = () => {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <header className="text-center space-y-4 max-w-2xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
+        <h1 className="text-4xl md:text-5xl font-bold text-white">
           Qur'oni Karim
         </h1>
-        <p className="text-slate-600 dark:text-slate-400">
+        <p className="text-slate-400">
           Qur'oni Karimni chiroyli va qulay interfeysda o'qing, o'rganing va tushuning.
         </p>
       </header>
