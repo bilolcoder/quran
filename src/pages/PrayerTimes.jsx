@@ -99,7 +99,7 @@ const PrayerTimes = () => {
         }
       }
 
-      // If it's before the first prayer of the day yes
+      // If it's before the first prayer of the day ye
       if (!current) {
         current = "Isha"; // Theoretically still Isha from previous day
         next = prayers[0];
