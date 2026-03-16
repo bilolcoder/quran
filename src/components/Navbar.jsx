@@ -23,8 +23,11 @@ const Navbar = () => {
             <Link to="/" className="text-slate-300 hover:text-primary-400 font-medium transition-colors">
               Suralar
             </Link>
-            <Link to="/prayer-times" className="text-slate-300 hover:text-primary-400 font-medium transition-colors">
-              Namoz Vaqtlari
+            <Link to="/tasbeh" className="text-slate-300 hover:text-emerald-400 font-medium transition-colors">
+              Tasbeh
+            </Link>
+            <Link to="/qibla" className="text-slate-300 hover:text-emerald-400 font-medium transition-colors">
+              Qibla
             </Link>
           </div>
 
@@ -48,11 +51,18 @@ const Navbar = () => {
               Suralar
             </Link>
             <Link 
-              to="/prayer-times" 
+              to="/tasbeh" 
               className="block px-4 py-2 text-slate-300 hover:bg-slate-800 rounded-lg"
               onClick={() => setIsOpen(false)}
             >
-              Namoz Vaqtlari
+              Tasbeh
+            </Link>
+            <Link 
+              to="/qibla" 
+              className="block px-4 py-2 text-slate-300 hover:bg-slate-800 rounded-lg"
+              onClick={() => setIsOpen(false)}
+            >
+              Qibla
             </Link>
           </div>
         )}

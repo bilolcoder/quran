@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import SurahDetail from './pages/SurahDetail';
 import PrayerTimes from './pages/PrayerTimes';
+import Tasbeh from './pages/Tasbeh';
+import QiblaFinder from './pages/QiblaFinder';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/surah/:id" element={<SurahDetail />} />
             <Route path="/prayer-times" element={<PrayerTimes />} />
+            <Route path="/tasbeh" element={<Tasbeh />} />
+            <Route path="/qibla" element={<QiblaFinder />} />
           </Routes>
         </main>
       </div>
